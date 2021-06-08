@@ -1,11 +1,41 @@
-/* Tailwind base/components */
+@font-face {
+  font-family: 'Mont';
+  src: url('../public/fonts/Mont-SemiBold.woff') format('woff'),
+      url('../public/fonts/Mont-SemiBold.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AribauGrotesk';
+  src: url('../public/fonts/AribauGrotesk-Bd.woff') format('woff'),
+      url('../public/fonts/AribauGrotesk-Bd.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'AribauGrotesk';
+  src: url('../public/fonts/AribauGrotesk-Rg.woff') format('woff'),
+      url('../public/fonts/AribauGrotesk-Rg.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'AribauGrotesk';
+  src: url('../public/fonts/AribauGrotesk-Light.woff') format('woff'),
+      url('../public/fonts/AribauGrotesk-Light.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 300;
+}
+
+/* purgecss start ignore */
 @tailwind base;
 @tailwind components;
+/* purgecss end ignore */
 
-/* Default Typography Styles */
-/* @import '_typography.css'; */
-
-/* Tailwind Utilities */
 @tailwind utilities;
 
 
@@ -17,7 +47,7 @@ html {
 
 html,
 body {
-  @apply font-sans antialiased leading-relaxed text-black
+  @apply min-h-screen font-sans antialiased leading-relaxed text-secondary-dark;
 }
 
 * {
@@ -25,8 +55,7 @@ body {
 }
 
 a {
-  color: #0070f3;
-  text-decoration: none;
+  @apply no-underline text-secondary-dark;
 }
 
 a:hover {
@@ -36,4 +65,41 @@ a:hover {
 img {
   max-width: 100%;
   display: block;
+}
+
+h1 {
+  @apply text-xl leading-none font-display;
+}
+
+h2 {
+  @apply text-xl leading-none font-display;
+}
+
+.content p {
+  @apply mb-4;
+}
+
+table {
+
+  thead {
+    @apply border-b-2 border-gray-100 text-primary font-display;
+  }
+  
+  tbody {
+     tr {
+        @apply border-b border-gray-200;
+     }
+
+     td:nth-child(even) {
+       @apply text-center;
+     }
+  } 
+
+  tr:nth-child(even) {
+    @apply bg-gray-100;
+  }
+  
+  td {
+    @apply w-1/2 p-4;
+  }
 }
