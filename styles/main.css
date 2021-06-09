@@ -103,3 +103,18 @@ table {
     @apply w-1/2 p-4;
   }
 }
+
+@screen 3xl {
+  h1 {
+    @apply text-2xl;
+  }
+}
+
+input,
+select {
+  @apply p-2 bg-white border border-gray-300;
+}
+
+input[type=submit] {
+  @apply border-none;
+}

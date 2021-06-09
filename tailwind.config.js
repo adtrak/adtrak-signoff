@@ -106,7 +106,6 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss-filters"),
-    require('@tailwindcss/forms'),
   ],
   corePlugins: {
     container: false,

@@ -23,15 +23,7 @@ export default function ErrorPage() {
 
       <Header />
 
-      <Container>
-
-        <h1>Error 404.</h1>
-
-        <p>Well fuck something went wrong.</p>
-
-        <FancyLink destination="/" a11yText="Return to homepage" label="Return to homepage" extraClasses="" />
-
-      </Container>
+      
       
       <Footer />
 
