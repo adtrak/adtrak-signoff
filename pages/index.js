@@ -219,7 +219,8 @@ export default function Home() {
                     />
                     <button arial-label="Clear signature pad" className="px-2 py-1 mt-3 text-2xs" onClick={() => {handleClearSignature()}}>Clear signature</button>
                     <button arial-label="Finished signature" className="px-2 py-1 mt-3 text-2xs" onClick={() => {
-                      let signature = padRef.current.toDataURL('image/png');
+                      // let signature = padRef.current.toDataURL('image/png');
+                      let signature = document.querySelector('.sigCanvas').toDataURL('image/png');
                       document.querySelector('.sig-pad').classList.add('opacity-50', 'pointer-events-none');
                       setSignature(signature);
                     }}>Finish signature</button>
