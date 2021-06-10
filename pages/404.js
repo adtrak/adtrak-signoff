@@ -23,10 +23,6 @@ export default function ErrorPage() {
 
       <Header />
 
-      
-      
-      <Footer />
-
     </Layout>
   )
 }

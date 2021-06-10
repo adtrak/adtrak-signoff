@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Layout from '../components/layout'
 import Header from '../components/header'
+import Button from '../components/button'
 import SignatureCanvas from 'react-signature-canvas'
 import { useRef, useState } from 'react'
 import Container from '../components/container'
@@ -13,20 +14,11 @@ export default function Home() {
 
   let padRef = useRef({});
 
-  function handleClear() {
+  function handleClearSignature() {
       padRef.current.clear();
   }
 
   const [signature, setSignature] = useState(false);
-
-  // function transformSignatureToBase64() {
-  //   let signature = padRef.current.toDataURL('image/png');
-  //   console.log(signature);
-  //   // let signatureField = document.querySelector('.signature-image');
-  //   // signatureField.val(signature);
-    
-
-  // }
 
   return (
 
@@ -55,15 +47,16 @@ export default function Home() {
           <section>
             <Container>
               <div className="px-6 md:px-20">
-                <div className="md:flex md:justify-between md:items-center p-6 mx-auto font-light text-white bg-secondary-dark lg:p-10 mt-[-30px]">
+                <div className="md:flex md:justify-between md:items-center p-6 mx-auto font-light text-white bg-secondary-dark lg:p-10 xl:p-16 mt-[-30px]">
                   <p className="xl:text-lg xl:w-2/3 2xl:w-1/2">
                     <span className="block text-secondary-light lg:inline">Need another look? </span> 
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus. 
                   </p>
                   <div className="md:justify-center md:flex md:w-3/12 lg:w-auto">
-                    <Link href="/">
-                        <a className="inline-block p-3 mx-auto mt-2 text-center text-white transition bg-primary hover:opacity-90 hover:no-underline">View design</a>
-                    </Link>
+                    <Button
+                      buttonLabel="View design"
+                      destination="/"
+                    />
                   </div>                
                 </div>
               </div>
@@ -214,7 +207,7 @@ export default function Home() {
                     <span className="ml-2 opacity-75">I am happy with the design of my new website, please proceed to the development / code phase.</span>
                   </label>
 
-                  <label className="w-full p-3">
+                  <label className="w-full p-3 sig-pad">
                     <span className="">Your signature *</span>
                     <SignatureCanvas
                       penColor='black'
@@ -225,19 +218,20 @@ export default function Home() {
                         className: 'sigCanvas bg-white border border-gray-300'
                       }}
                     />
-                    <button arial-label="Clear signature pad" className="px-2 py-1 mt-3 text-2xs" onClick={() => {handleClear()}}>Clear signature</button>
+                    <button arial-label="Clear signature pad" className="px-2 py-1 mt-3 text-2xs" onClick={() => {handleClearSignature()}}>Clear signature</button>
                     <button arial-label="Finished signature" className="px-2 py-1 mt-3 text-2xs" onClick={() => {
                       let signature = padRef.current.toDataURL('image/png');
+                      let sigPad = document.querySelector('.sig-pad').classList.add('opacity-50', 'pointer-events-none');
                       setSignature(signature);
                     }}>Finish signature</button>
                   </label>
                   
-                  <input required type="text" className="signature-image" value={signature} name="signature" />
+                  <input required type="hidden" className="signature-image" value={signature} name="signature" />
                   
                   <input type="text" name="_gotcha" className="hidden" />
                   
                   <div className="w-full p-3">
-                    <input type="submit" className="p-3 text-white transition duration-300 cursor-pointer bg-primary focus:text-white hover:bg-secondary-light" value="Send Enquiry" />
+                    <input type="submit" className="p-3 text-white transition duration-300 cursor-pointer bg-primary focus:text-white" value="Send Enquiry" />
                   </div>
 
                 </form>
@@ -316,19 +310,24 @@ export default function Home() {
             <Container>
               <div className="p-6 lg:p-20">
                 
-                <div className="flex-wrap items-center justify-between p-6 text-white md:p-20 bg-secondary-dark sm:flex">
-                  
+                <div className="items-center justify-between p-6 text-white lg:p-20 bg-secondary-dark md:flex">
+
                   <Image src="/images/roundworks.png" alt="Partnered with Roundworks IT" width={199} height={44} />
 
-                  <div className="pl-8 lg:text-lg">
+                  <div className="my-4 md:px-8 md:my-0 xl:text-lg">
 
                     <p className="">We've partnered with Roundworks for IT Support.</p>
 
-                    <a className="block text-secondary-light" href="https://itsupport.adtrak.co.uk/">Find out more...</a>
+                    <p>Lorem ipsum dalor sit amet</p>
                     
                   </div>
-
-                  <a className="p-3 text-white bg-primary" href="https://itsupport.adtrak.co.uk/">Find out more</a>
+                  
+                  <div className="flex justify-end">
+                    <Button
+                      buttonLabel="Find out more"
+                      destination="https://itsupport.adtrak.co.uk/"
+                    />
+                  </div>
 
                 </div>
                 
