@@ -21,6 +21,7 @@
     "postcss-preset-env": "^6.7.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-signature-canvas": "^1.0.3",
     "tailwindcss": "^2.1.2",
     "tailwindcss-filters": "^3.0.0"
   }

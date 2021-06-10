@@ -68,7 +68,7 @@ img {
 }
 
 h1 {
-  @apply text-xl leading-none font-display;
+  @apply text-xl leading-none font-display 3xl:text-2xl;
 }
 
 h2 {
@@ -101,12 +101,6 @@ table {
   
   td {
     @apply w-1/2 p-4;
-  }
-}
-
-@screen 3xl {
-  h1 {
-    @apply text-2xl;
   }
 }
 

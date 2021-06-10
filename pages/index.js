@@ -3,12 +3,30 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Layout from '../components/layout'
 import Header from '../components/header'
-import Footer from '../components/footer'
+import SignatureCanvas from 'react-signature-canvas'
+import { useRef, useState } from 'react'
 import Container from '../components/container'
 import IconThumb from '../components/iconThumb'
 import { motion } from 'framer-motion'
 
 export default function Home() {
+
+  let padRef = useRef({});
+
+  function handleClear() {
+      padRef.current.clear();
+  }
+
+  const [signature, setSignature] = useState(false);
+
+  // function transformSignatureToBase64() {
+  //   let signature = padRef.current.toDataURL('image/png');
+  //   console.log(signature);
+  //   // let signatureField = document.querySelector('.signature-image');
+  //   // signatureField.val(signature);
+    
+
+  // }
 
   return (
 
@@ -23,9 +41,7 @@ export default function Home() {
             />
             <meta name="og:title" content="Adtrak Signoff Form" />
             <meta name="twitter:card" content="summary_large_image" />
-        </Head>
-
-        
+        </Head>        
 
         <motion.div 
           key="homepage"
@@ -155,7 +171,7 @@ export default function Home() {
 
                 <p className="mx-auto lg:w-2/3">Ready to sign off? Great! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus ultricies fringilla.</p>
 
-                <form id="form" action="https://formspree.io/f/YOURAPI" method="POST" className="flex flex-wrap my-6 -m-1 overflow-x-hidden text-left ">
+                <form id="form" encType="multipart/form-data" action="https://formspree.io/f/YOURAPI" method="POST" className="flex flex-wrap my-6 -m-1 overflow-x-hidden text-left ">
 
                   <label className="w-full p-3 md:w-1/2">
                     <span className="">Name *</span>
@@ -197,8 +213,29 @@ export default function Home() {
                     <input required type="checkbox" className="" name="confirmation" />
                     <span className="ml-2 opacity-75">I am happy with the design of my new website, please proceed to the development / code phase.</span>
                   </label>
+
+                  <label className="w-full p-3">
+                    <span className="">Your signature *</span>
+                    <SignatureCanvas
+                      penColor='black'
+                      ref={padRef}
+                      canvasProps={{
+                        width: 310, 
+                        height: 150, 
+                        className: 'sigCanvas bg-white border border-gray-300'
+                      }}
+                    />
+                    <button arial-label="Clear signature pad" className="px-2 py-1 mt-3 text-2xs" onClick={() => {handleClear()}}>Clear signature</button>
+                    <button arial-label="Finished signature" className="px-2 py-1 mt-3 text-2xs" onClick={() => {
+                      let signature = padRef.current.toDataURL('image/png');
+                      setSignature(signature);
+                    }}>Finish signature</button>
+                  </label>
+                  
+                  <input required type="text" className="signature-image" value={signature} name="signature" />
                   
                   <input type="text" name="_gotcha" className="hidden" />
+                  
                   <div className="w-full p-3">
                     <input type="submit" className="p-3 text-white transition duration-300 cursor-pointer bg-primary focus:text-white hover:bg-secondary-light" value="Send Enquiry" />
                   </div>
@@ -207,9 +244,8 @@ export default function Home() {
                 
               </div>
 
-
-            
             </Container>
+
           </section>
 
           <section id="what-happens-next" className="bg-secondary">
@@ -276,13 +312,26 @@ export default function Home() {
 
             </Container>           
 
-            
 
             <Container>
               <div className="p-6 lg:p-20">
-                <div className="p-6 text-white md:p-20 bg-secondary-dark">
-                  <Image src="/images/roundworks.svg" alt="Partnered with Roundworks IT" width={200} height={44.2} />
+                
+                <div className="flex-wrap items-center justify-between p-6 text-white md:p-20 bg-secondary-dark sm:flex">
+                  
+                  <Image src="/images/roundworks.png" alt="Partnered with Roundworks IT" width={199} height={44} />
+
+                  <div className="pl-8 lg:text-lg">
+
+                    <p className="">We've partnered with Roundworks for IT Support.</p>
+
+                    <a className="block text-secondary-light" href="https://itsupport.adtrak.co.uk/">Find out more...</a>
+                    
+                  </div>
+
+                  <a className="p-3 text-white bg-primary" href="https://itsupport.adtrak.co.uk/">Find out more</a>
+
                 </div>
+                
               </div>
               
             </Container>
