@@ -3,10 +3,10 @@ import Image from 'next/image'
 import Layout from '../components/layout'
 import Header from '../components/header'
 import Button from '../components/button'
+import ChangeFeature from '../components/changeFeature'
 import SignatureCanvas from 'react-signature-canvas'
 import { useRef, useState } from 'react'
 import Container from '../components/container'
-import IconThumb from '../components/iconThumb'
 import { motion } from 'framer-motion'
 
 export default function Home() {
@@ -115,34 +115,34 @@ export default function Home() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Minor copy</td>
-                      <td><IconThumb outcome="positive" /></td>
-                    </tr>
-                    <tr>
-                      <td>Images</td>
-                      <td><IconThumb outcome="positive" /></td>
-                    </tr>
-                    <tr>
-                      <td>Another item</td>
-                      <td><IconThumb outcome="positive" /></td>
-                    </tr>
-                    <tr>
-                      <td>Something else</td>
-                      <td><IconThumb outcome="positive" /></td>
-                    </tr>
-                    <tr>
-                      <td>Another thing</td>
-                      <td><IconThumb outcome="negative" /></td>
-                    </tr>
-                    <tr>
-                      <td>Item goes here</td>
-                      <td><IconThumb outcome="negative" /></td>
-                    </tr>
-                    <tr>
-                      <td>Can I change this</td>
-                      <td><IconThumb outcome="negative" /></td>
-                    </tr>
+                    <ChangeFeature 
+                      featureTitle="Minor copy"
+                      outcome="positive"
+                    />
+                    <ChangeFeature 
+                      featureTitle="Images"
+                      outcome="positive"
+                    />
+                    <ChangeFeature 
+                      featureTitle="Another Item"
+                      outcome="positive"
+                    />
+                    <ChangeFeature 
+                      featureTitle="Another Item"
+                      outcome="positive"
+                    />
+                    <ChangeFeature 
+                      featureTitle="Negative"
+                      outcome="negative"
+                    />
+                    <ChangeFeature 
+                      featureTitle="Negative"
+                      outcome="negative"
+                    />
+                    <ChangeFeature 
+                      featureTitle="Negative"
+                      outcome="negative"
+                    />
                   </tbody>
                 </table>
 
