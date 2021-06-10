@@ -315,7 +315,7 @@ export default function Home() {
 
                   <div className="my-4 md:px-8 md:my-0 xl:text-lg">
 
-                    <p className="">We've partnered with Roundworks for IT Support.</p>
+                    <p>We've partnered with Roundworks for IT Support.</p>
 
                     <p>Lorem ipsum dalor sit amet</p>
                     
