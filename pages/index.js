@@ -211,13 +211,14 @@ export default function Home() {
                     <SignatureCanvas
                       penColor='black'
                       ref={padRef}
+                      clearOnResize={true}
                       canvasProps={{
                         width: 310, 
                         height: 150, 
                         className: 'sigCanvas bg-white border border-gray-300'
                       }}
                     />
-                    <button arial-label="Clear signature pad" className="px-2 py-1 mt-3 text-2xs" onClick={() => {handleClearSignature()}}>Clear signature</button>
+                    <button arial-label="Clear signature pad" className="px-2 py-1 mt-3 opacity-50 text-2xs" onClick={() => {handleClearSignature()}}>Clear signature</button>
                     <button arial-label="Finished signature" className="px-2 py-1 mt-3 text-2xs" onClick={() => {
                       // let signature = padRef.current.toDataURL('image/png');
                       let signature = document.querySelector('.sigCanvas').toDataURL('image/png');
