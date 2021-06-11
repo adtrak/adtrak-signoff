@@ -86,7 +86,7 @@ export default function Home() {
                 <div className="md:flex md:justify-between md:items-center p-6 mx-auto font-light text-white bg-secondary-dark lg:p-10 xl:p-16 mt-[-30px]">
                   <p className="xl:text-lg xl:w-2/3 2xl:w-1/2">
                     <span className="block text-secondary-light lg:inline">Need another look? </span> 
-                    Click the link to review your design one final time before signing off.
+                    Click the link to review your design again time before signing it off to code.
                   </p>
                   <div className="md:justify-center md:flex md:w-3/12 lg:w-auto">
                     <Button
