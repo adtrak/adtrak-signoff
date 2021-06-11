@@ -6,11 +6,34 @@ import Button from '../components/button'
 import ChangeFeature from '../components/changeFeature'
 import SignatureCanvas from 'react-signature-canvas'
 import NextStep from '../components/nextStep'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Container from '../components/container'
 import { motion } from 'framer-motion'
 
 export default function Home() {
+
+  const [isSticky, setSticky] = useState(false);
+  const [isActive, setActive] = useState(false);
+
+  //Set the navigation to sticky when you scroll past it
+  const handleScroll = () => {
+    setSticky(document.querySelector('.navigation').getBoundingClientRect().top-20 <= 0);
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', () => handleScroll);
+    }
+  }, []);
+
+  function toggleActive(e) {
+    console.log(e);
+    setActive(!isActive);
+  }
+
+
 
   const nextSteps = [
     'Send website imagery and branding to your designer',
@@ -46,7 +69,9 @@ export default function Home() {
       "feature": "Colour Scheme",
       "outcome": "negative"
     },
-  ]
+  ];
+
+
 
   // let padRef = useRef({});
 
@@ -99,23 +124,30 @@ export default function Home() {
             </Container>
           </section>
 
-          <section className="px-6 border-b border-gray-100 md:px-20">
-            <Container>
-              <ul className="w-full sm:flex sm:justify-between xl:w-2/3 xl:mx-auto">
-                <li className="3xl:w-1/4">
-                  <a href="#more-information" className="block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to text-primary border-primary">More Information</a>
-                </li>
-                <li className="3xl:w-1/4">
-                  <a href="#what-can-i-change" className="block p-4 pl-0 border-b-2 border-transparent md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to">What Can I Change?</a>
-                </li>
-                <li className="3xl:w-1/4">
-                  <a href="#signoff-form"  className="block p-4 pl-0 border-b-2 border-transparent md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to">Sign Off Form</a>
-                </li>
-                <li className="3xl:w-1/4">
-                  <a href="#what-happens-next"  className="block p-4 pl-0 border-b-2 border-transparent md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to">What Happens Next?</a>
-                </li>
-              </ul>
-            </Container>
+          <section className="navigation">
+            <div className={` px-6 border-b border-gray-100 md:px-20 ${isSticky ? 'md:sticky-navigation' : ''}`}>
+              <Container>
+                <ul className="w-full sm:flex sm:justify-between xl:w-2/3 xl:mx-auto">
+                  <li className="3xl:w-1/4">
+                    <a
+                      href="#more-information"
+                      onClick={toggleActive}
+                      className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${isActive ? 'text-primary border-primary' : 'border-transparent'}`}>
+                        More Information
+                    </a>
+                  </li>
+                  <li className="3xl:w-1/4">
+                    <a href="#what-can-i-change" data-scroll="what-can-i-change" className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${isActive ? 'text-primary border-primary' : 'border-transparent'}`}>What Can I Change?</a>
+                  </li>
+                  <li className="3xl:w-1/4">
+                    <a href="#signoff-form" data-scroll="signoff-form"  className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${isActive ? 'text-primary border-primary' : 'border-transparent'}`}>Sign Off Form</a>
+                  </li>
+                  <li className="3xl:w-1/4">
+                    <a href="#what-happens-next" data-scroll="what-happens-next" className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${isActive ? 'text-primary border-primary' : 'border-transparent'}`}>What Happens Next?</a>
+                  </li>
+                </ul>
+              </Container>
+            </div>
           </section>
 
 
@@ -155,6 +187,7 @@ export default function Home() {
                     {changeFeatures.map((item, i) => {
                       return (
                         <ChangeFeature 
+                          key={i}
                           featureTitle={item.feature}
                           outcome={item.outcome}
                         />
