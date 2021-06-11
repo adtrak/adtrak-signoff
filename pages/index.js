@@ -4,10 +4,8 @@ import Layout from '../components/layout'
 import Header from '../components/header'
 import Button from '../components/button'
 import ChangeFeature from '../components/changeFeature'
-import SignatureCanvas from 'react-signature-canvas'
 import NextStep from '../components/nextStep'
-import NavLink from '../components/navLink'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Container from '../components/container'
 import { motion } from 'framer-motion'
 
@@ -27,6 +25,24 @@ export default function Home() {
     }
   }, []);
 
+
+
+  const [values, setValues] = useState({
+        moreInfo: false, 
+        whatCanIChange: false,
+        signOffForm: false,
+        whatHappensNext: false,
+    })
+    const handleActiveChange = e => {
+        // Reset all state to false
+        setValues({moreInfo: false, whatCanIChange: false, signOffForm: false, whatHappensNext: false });
+        // Get the currently clicked button
+        const {area} = e.target.dataset;
+        // update the relevant state to true
+        setValues({[area]: true});
+    }
+
+    
   const nextSteps = [
     'Send website imagery and branding to your designer',
     'Provide assets that we need, certificates, testimonials etc.',
@@ -120,10 +136,45 @@ export default function Home() {
             <div className={` px-6 border-b border-gray-100 md:px-20 ${isSticky ? 'md:sticky-navigation' : ''}`}>
               <Container>
                 <ul className="w-full sm:flex sm:justify-between xl:w-2/3 xl:mx-auto">
-                  <NavLink href="#more-information" label="More Information" />
-                  <NavLink href="#what-can-i-change" label="What Can I Change" />
-                  <NavLink href="#signoff-form" label="Signoff Form" />
-                  <NavLink href="#what-happens-next" label="What Happens Next" />
+                  <li className="3xl:w-1/4">
+                    <a
+                        href="#more-information"
+                        onClick={handleActiveChange}
+                        data-area="moreInfo"
+                        className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.moreInfo ? 'text-primary border-primary' : 'border-transparent'}`}>
+                        More Information
+                    </a>
+                  </li>
+
+                  <li className="3xl:w-1/4">
+                    <a
+                        href="#what-can-i-change"
+                        onClick={handleActiveChange}
+                        data-area="whatCanIChange"
+                        className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.whatCanIChange ? 'text-primary border-primary' : 'border-transparent'}`}>
+                        What Can I Change?
+                    </a>
+                  </li>
+
+                  <li className="3xl:w-1/4">
+                    <a
+                        href="#signoff-form"
+                        onClick={handleActiveChange}
+                        data-area="signOffForm"
+                        className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.signOffForm ? 'text-primary border-primary' : 'border-transparent'}`}>
+                        Signoff Form
+                    </a>
+                  </li>
+
+                  <li className="3xl:w-1/4">
+                    <a
+                        href="#what-happens-next"
+                        onClick={handleActiveChange}
+                        data-area="whatHappensNext"
+                        className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.whatHappensNext ? 'text-primary border-primary' : 'border-transparent'}`}>
+                        What Happens Next
+                    </a>
+                  </li>
                 </ul>
               </Container>
             </div>
