@@ -28,19 +28,19 @@ export default function Home() {
 
 
   const [values, setValues] = useState({
-        moreInfo: false, 
-        whatCanIChange: false,
-        signOffForm: false,
-        whatHappensNext: false,
-    })
-    const handleActiveChange = e => {
-        // Reset all state to false
-        setValues({moreInfo: false, whatCanIChange: false, signOffForm: false, whatHappensNext: false });
-        // Get the currently clicked button
-        const {area} = e.target.dataset;
-        // update the relevant state to true
-        setValues({[area]: true});
-    }
+      moreInfo: true, 
+      whatCanIChange: false,
+      signOffForm: false,
+      whatHappensNext: false,
+  })
+  const handleActiveChange = e => {
+      // Reset all state to false
+      setValues({moreInfo: false, whatCanIChange: false, signOffForm: false, whatHappensNext: false });
+      // Get the currently clicked button
+      const {area} = e.target.dataset;
+      // update the relevant state to true
+      setValues({[area]: true});
+  }
 
     
   const nextSteps = [
