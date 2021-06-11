@@ -15,8 +15,7 @@ export default function Home() {
   const [isSticky, setSticky] = useState(false);  
   const handleScroll = () => {
     setSticky(document.querySelector('.navigation').getBoundingClientRect().top-20 <= 0);
-  }
-  
+  }  
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     
@@ -26,7 +25,7 @@ export default function Home() {
   }, []);
 
 
-
+  // Set active states when clicked
   const [values, setValues] = useState({
       moreInfo: true, 
       whatCanIChange: false,
@@ -39,8 +38,31 @@ export default function Home() {
       // Get the currently clicked button
       const {area} = e.target.dataset;
       // update the relevant state to true
-      setValues({[area]: true});
+      setValues({ [area]: true} );
   }
+
+  // Set active states when scrolled over
+  const handleScrollActive = e => {
+    const scrollElems = [
+      'moreInfo',
+      'whatCanIChange',
+      'signOffForm',
+      'whatHappensNext'
+    ];
+    scrollElems.map((elem, i) => {
+      if(document.getElementById(elem).getBoundingClientRect().top-20 <= 20) {
+        setValues({moreInfo: false, whatCanIChange: false, signOffForm: false, whatHappensNext: false });
+        setValues({ [elem]: true} );
+      }
+    });
+  }
+  useEffect(() => {
+    window.addEventListener('scroll', handleScrollActive);
+    
+    return () => {
+      window.removeEventListener('scroll', () => handleScrollActive);
+    }
+  }, []);
 
     
   const nextSteps = [
@@ -138,7 +160,7 @@ export default function Home() {
                 <ul className="w-full sm:flex sm:justify-between xl:w-2/3 xl:mx-auto">
                   <li className="3xl:w-1/4">
                     <a
-                        href="#more-information"
+                        href="#moreInfo"
                         onClick={handleActiveChange}
                         data-area="moreInfo"
                         className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.moreInfo ? 'text-primary border-primary' : 'border-transparent'}`}>
@@ -181,7 +203,7 @@ export default function Home() {
           </section>
 
 
-          <section id="more-information" className="mb-4 border-b border-gray-100">
+          <section id="moreInfo" className="mb-4 border-b border-gray-100">
             <Container>
               <div className="p-6 md:p-20 lg:w-8/12 xl:w-7/12 2xl:w-1/2 lg:px-0 md:mx-auto content">
                 <p>By agreeing to the terms of this document and signing as below, I am happy with the design of my new website and will not look to make any further changes during the development stage, or before it goes live.</p>
@@ -196,7 +218,7 @@ export default function Home() {
           </section>
 
 
-          <section id="what-can-i-change">
+          <section id="whatCanIChange">
 
             <Container>
             
@@ -234,7 +256,7 @@ export default function Home() {
           </section>
 
 
-          <section id="signoff-form" className="bg-gray-100">
+          <section id="signOffForm" className="bg-gray-100">
             <Container>
               
               <div className="p-6 md:p-20 md:mx-auto lg:w-8/12 xl:w-7/12 2xl:w-1/2 lg:px-0 lg:text-center">
@@ -330,7 +352,7 @@ export default function Home() {
 
           </section>
 
-          <section id="what-happens-next" className="bg-secondary">
+          <section id="whatHappensNext" className="bg-secondary">
 
             <Container>
 
