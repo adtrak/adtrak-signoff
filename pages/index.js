@@ -5,19 +5,20 @@ import Header from '../components/header'
 import Button from '../components/button'
 import ChangeFeature from '../components/changeFeature'
 import SignatureCanvas from 'react-signature-canvas'
+import NextStep from '../components/nextStep'
 import { useRef, useState } from 'react'
 import Container from '../components/container'
 import { motion } from 'framer-motion'
 
 export default function Home() {
 
-  let padRef = useRef({});
+  // let padRef = useRef({});
 
-  function handleClearSignature() {
-      padRef.current.clear();
-  }
+  // function handleClearSignature() {
+  //     padRef.current.clear();
+  // }
 
-  const [signature, setSignature] = useState(false);
+  // const [signature, setSignature] = useState(false);
 
   return (
 
@@ -231,7 +232,7 @@ export default function Home() {
                     
                   </label> */}
                   
-                  <input required type="hidden" className="signature-image" value={signature} name="signature" />
+                  {/* <input required type="hidden" className="signature-image" value={signature} name="signature" /> */}
                   
                   <input type="text" name="_gotcha" className="hidden" />
                   
@@ -263,12 +264,7 @@ export default function Home() {
 
                 <div className="flex flex-wrap mt-6">
 
-                  <div className="w-full p-3 px-0 sm:p-3 sm:w-1/2 lg:w-1/3">
-                    <div className="flex p-3 bg-black md:p-5 bg-opacity-10">
-                      <Image src="/images/target.svg" alt="Bullet Point" width={30} height={30} />
-                      <p className="px-4">Send website imagery to your designer</p>
-                    </div>
-                  </div>
+                  <NextStep step="Send website imagery to your designer" />
 
                   <div className="w-full p-3 px-0 sm:p-3 sm:w-1/2 lg:w-1/3">
                     <div className="flex p-3 bg-black md:p-5 bg-opacity-10">
