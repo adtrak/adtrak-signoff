@@ -13,12 +13,12 @@ import { motion } from 'framer-motion'
 export default function Home() {
 
   const nextSteps = [
-    'Send website imagery to your designer',
-    'Send website imagery to your designer',
-    'Send website imagery to your designer',
-    'Send website imagery to your designer',
-    'Send website imagery to your designer',
-    'Send website imagery to your designer',
+    'Send website imagery and branding to your designer',
+    'Provide assets that we need, certificates, testimonials etc.',
+    'Review the copywriting concept quickly',
+    'Provide access to any third party accounts (MailChimp, etc)',
+    'Review your staging links and offer feedback quickly',
+    'Find out where your email and domain names are',
   ];
 
   const changeFeatures = [
@@ -62,12 +62,12 @@ export default function Home() {
 
         <Head>
             <link rel="icon" href="/favicon.ico" />
-            <title>Adtrak Signoff Form</title>
+            <title>Adtrak Sign Off Form</title>
             <meta
             name="description"
-            content="Adtrak Signoff Form"
+            content="Adtrak Sign off Form"
             />
-            <meta name="og:title" content="Adtrak Signoff Form" />
+            <meta name="og:title" content="Adtrak Sign off Form" />
             <meta name="twitter:card" content="summary_large_image" />
         </Head>        
 
@@ -86,7 +86,7 @@ export default function Home() {
                 <div className="md:flex md:justify-between md:items-center p-6 mx-auto font-light text-white bg-secondary-dark lg:p-10 xl:p-16 mt-[-30px]">
                   <p className="xl:text-lg xl:w-2/3 2xl:w-1/2">
                     <span className="block text-secondary-light lg:inline">Need another look? </span> 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus. 
+                    Click the link to review your design one final time before signing off.
                   </p>
                   <div className="md:justify-center md:flex md:w-3/12 lg:w-auto">
                     <Button
@@ -178,7 +178,10 @@ export default function Home() {
                 
                 <h2 className="mb-4">Sign Off Form</h2>
 
-                <p className="mx-auto lg:w-2/3">Ready to sign off? Great! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus ultricies fringilla.</p>
+                <div className="mx-auto lg:w-2/3 content">
+                  <p>Ready to sign off? Great!</p>
+                  <p>Complete the form below to notify your Account Manager and Client Team that you're ready to move onto the next stage of the project.</p>
+                </div>
 
                 <form id="form" encType="multipart/form-data" action="https://formspree.io/f/YOURAPI" method="POST" className="flex flex-wrap my-6 -m-1 overflow-x-hidden text-left ">
 
@@ -274,7 +277,10 @@ export default function Home() {
 
                   <h2 className="mb-4">What happens next?</h2>
                   
-                  <p className="mx-auto lg:w-2/3">Ready to sign off? Great! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus ultricies fringilla.</p>
+                  <div className="mx-auto lg:w-2/3 content">
+                    <p>Once you've signed off your design, we'll begin to code your website. This transforms the design into a fully functioning, accessible website.</p>
+                    <p className="text-secondary-light">In the meantime, we ask that you...</p>
+                  </div>
                   
                 </div>
 
@@ -302,9 +308,9 @@ export default function Home() {
 
                   <div className="my-4 md:px-8 md:my-0 xl:text-lg">
 
-                    <p>We've partnered with Roundworks for IT Support.</p>
-
-                    <p>Lorem ipsum dalor sit amet</p>
+                    <p className="text-secondary-light">Need help with your IT equipment or Emails?</p>
+                    
+                    <p>We've partnered with Roundworks IT to help you.</p>
                     
                   </div>
                   
