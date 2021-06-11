@@ -17,7 +17,36 @@ export default function Home() {
     'Send website imagery to your designer',
     'Send website imagery to your designer',
     'Send website imagery to your designer',
+    'Send website imagery to your designer',
+    'Send website imagery to your designer',
   ];
+
+  const changeFeatures = [
+    {
+      "feature": "Minor Copy",
+      "outcome": "positive"
+    },
+    {
+      "feature": "Imagery",
+      "outcome": "positive"
+    },
+    {
+      "feature": "Call To Actions",
+      "outcome": "positive"
+    },
+    {
+      "feature": "Branding",
+      "outcome": "negative"
+    },
+    {
+      "feature": "Layout Changes",
+      "outcome": "negative"
+    },
+    {
+      "feature": "Colour Scheme",
+      "outcome": "negative"
+    },
+  ]
 
   // let padRef = useRef({});
 
@@ -123,34 +152,14 @@ export default function Home() {
                     </tr>
                   </thead>
                   <tbody>
-                    <ChangeFeature 
-                      featureTitle="Minor copy"
-                      outcome="positive"
-                    />
-                    <ChangeFeature 
-                      featureTitle="Images"
-                      outcome="positive"
-                    />
-                    <ChangeFeature 
-                      featureTitle="Another Item"
-                      outcome="positive"
-                    />
-                    <ChangeFeature 
-                      featureTitle="Another Item"
-                      outcome="positive"
-                    />
-                    <ChangeFeature 
-                      featureTitle="Negative"
-                      outcome="negative"
-                    />
-                    <ChangeFeature 
-                      featureTitle="Negative"
-                      outcome="negative"
-                    />
-                    <ChangeFeature 
-                      featureTitle="Negative"
-                      outcome="negative"
-                    />
+                    {changeFeatures.map((item, i) => {
+                      return (
+                        <ChangeFeature 
+                          featureTitle={item.feature}
+                          outcome={item.outcome}
+                        />
+                      )
+                    })}
                   </tbody>
                 </table>
 
