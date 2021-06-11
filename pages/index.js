@@ -206,8 +206,10 @@ export default function Home() {
                     <span className="ml-2 opacity-75">I am happy with the design of my new website, please proceed to the development / code phase.</span>
                   </label>
 
-                  <label className="w-full p-3 sig-pad">
+                  {/* <label className="w-full p-3 sig-pad">
+                    
                     <span className="">Your signature *</span>
+                    
                     <SignatureCanvas
                       penColor='black'
                       ref={padRef}
@@ -218,14 +220,16 @@ export default function Home() {
                         className: 'sigCanvas bg-white border border-gray-300'
                       }}
                     />
+                    
                     <button arial-label="Clear signature pad" className="px-2 py-1 mt-3 opacity-50 text-2xs" onClick={() => {handleClearSignature()}}>Clear signature</button>
+                    
                     <button arial-label="Finished signature" className="px-2 py-1 mt-3 text-2xs" onClick={() => {
-                      // let signature = padRef.current.toDataURL('image/png');
                       let signature = document.querySelector('.sigCanvas').toDataURL('image/png');
                       document.querySelector('.sig-pad').classList.add('opacity-50', 'pointer-events-none');
                       setSignature(signature);
                     }}>Finish signature</button>
-                  </label>
+                    
+                  </label> */}
                   
                   <input required type="hidden" className="signature-image" value={signature} name="signature" />
                   
