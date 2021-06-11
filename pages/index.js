@@ -50,7 +50,7 @@ export default function Home() {
       'whatHappensNext'
     ];
     scrollElems.map((elem, i) => {
-      if(document.getElementById(elem).getBoundingClientRect().top-20 <= 20) {
+      if(document.getElementById(elem).getBoundingClientRect().top-20 <= 100) {
         setValues({moreInfo: false, whatCanIChange: false, signOffForm: false, whatHappensNext: false });
         setValues({ [elem]: true} );
       }
