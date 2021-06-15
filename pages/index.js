@@ -1,12 +1,12 @@
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
 import Layout from '../components/layout'
+import Container from '../components/container'
 import Header from '../components/header'
 import Button from '../components/button'
 import ChangeFeature from '../components/changeFeature'
 import NextStep from '../components/nextStep'
-import { useEffect, useState } from 'react'
-import Container from '../components/container'
+import Roundworks from '../components/roundworks'
 import { motion } from 'framer-motion'
 
 export default function Home() {
@@ -133,7 +133,10 @@ export default function Home() {
           exit={{ opacity: 0 }}
           transition={{duration: .25}}
         >
-          <Header />
+          <Header 
+            heading="Website Sign Off"
+            subheading="Complete the form below to move to the next stage of your journey with Adtrak."
+          />
 
           <section>
             <Container>
@@ -268,35 +271,35 @@ export default function Home() {
                   <p>Complete the form below to notify your Account Manager and Client Team that you're ready to move onto the next stage of the project.</p>
                 </div>
 
-                <form id="form" encType="multipart/form-data" action="https://formspree.io/f/YOURAPI" method="POST" className="flex flex-wrap my-6 -m-1 overflow-x-hidden text-left ">
+                <form id="form" encType="multipart/form-data" action="https://formspree.io/f/xbjqykyw" method="POST" className="flex flex-wrap my-6 -m-1 overflow-x-hidden text-left ">
 
                   <label className="w-full p-3 md:w-1/2">
                     <span className="">Name *</span>
-                    <input required type="text" className="w-full" name="name" placeholder="Name *" />
+                    <input required type="text" className="w-full" name="Name" placeholder="Name *" />
                   </label>
                   <label className="w-full p-3 md:w-1/2">
                     <span className="">Company Name *</span>
-                    <input required type="text" className="w-full" name="company_name" placeholder="Company name *" />
+                    <input required type="text" className="w-full" name="Company Name" placeholder="Company name *" />
                   </label>
                   <label className="w-full p-3 md:w-1/2">
                     <span className="">Position In Company *</span>
-                    <input required type="text" className="w-full" name="position_in_company" placeholder="Position in company *" />
+                    <input required type="text" className="w-full" name="Position In Company" placeholder="Position in company *" />
                   </label>
                   <label className="w-full p-3 md:w-1/2">
                     <span className="">Email Address *</span>
-                    <input required type="email" className="w-full" name="email" placeholder="Email address *" />
+                    <input required type="email" className="w-full" name="Email" placeholder="Email address *" />
                   </label>
                   <label className="w-full p-3 md:w-1/2">
                     <span className="">Website Name *</span>
-                    <input required type="text" className="w-full" name="website_name" placeholder="Website Name *" />
+                    <input required type="text" className="w-full" name="Website Name" placeholder="Website Name *" />
                   </label>
                   <label className="w-full p-3 md:w-1/2">
                     <span className="">Web Address *</span>
-                    <input required type="url" className="w-full" name="web_address" placeholder="Web Address *" />
+                    <input required type="url" className="w-full" name="Web Address" placeholder="Web Address *" />
                   </label>
                   <label className="w-full p-3 md:w-1/2">
                     <span className="">Your Adtrak account manager *</span>
-                    <select className="w-full" name="account_manager">
+                    <select className="w-full" name="Account Manager">
                       <option value="Aaron Robb" defaultValue>Aaron Robb</option>
                       <option value="Ben Shaw">Ben Shaw</option>
                       <option value="Chris Robinson">Chris Robinson</option>
@@ -307,7 +310,7 @@ export default function Home() {
                     </select>
                   </label>
                   <label className="w-full p-3">
-                    <input required type="checkbox" className="" name="confirmation" />
+                    <input required type="checkbox" className="" name="Confirmation Statement" value="I am happy with the design of my new website, please proceed to the development / code phase." />
                     <span className="ml-2 opacity-75">I am happy with the design of my new website, please proceed to the development / code phase.</span>
                   </label>
 
@@ -384,33 +387,7 @@ export default function Home() {
             </Container>           
 
 
-            <Container>
-              <div className="p-6 lg:p-20">
-                
-                <div className="items-center justify-between p-6 text-white lg:p-20 bg-secondary-dark md:flex">
-
-                  <Image src="/images/roundworks.png" alt="Partnered with Roundworks IT" width={199} height={44} />
-
-                  <div className="my-4 md:px-8 md:my-0 xl:text-lg">
-
-                    <p className="text-secondary-light">Need help with your IT equipment or Emails?</p>
-                    
-                    <p>We've partnered with Roundworks IT to help you.</p>
-                    
-                  </div>
-                  
-                  <div className="flex justify-end">
-                    <Button
-                      buttonLabel="Find out more"
-                      destination="https://itsupport.adtrak.co.uk/"
-                    />
-                  </div>
-
-                </div>
-                
-              </div>
-              
-            </Container>
+            <Roundworks />
             
           </section>
           

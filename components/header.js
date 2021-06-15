@@ -1,7 +1,7 @@
 import Container from './container'
 import Image from 'next/image'
 
-export default function Header() {
+export default function Header({ heading, subheading }) {
     return (
         <header className="bg-secondary pb-[40px] xl:pb-[60px]">
             <Container>
@@ -22,9 +22,9 @@ export default function Header() {
 
                     <div className="w-full md:w-1/2 md:pr-4">
 
-                        <h1 className="mb-4">Website Sign Off</h1>
+                        <h1 className="mb-4">{heading}</h1>
                     
-                        <p>Complete the form below to move to the next stage of your journey with Adtrak.</p>
+                        <p>{subheading}</p>
 
                     </div>
                     
