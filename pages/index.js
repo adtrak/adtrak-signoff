@@ -33,12 +33,22 @@ export default function Home() {
       whatHappensNext: false,
   })
   const handleActiveChange = e => {
+    
+      e.preventDefault();
       // Reset all state to false
       setValues({moreInfo: false, whatCanIChange: false, signOffForm: false, whatHappensNext: false });
       // Get the currently clicked button
       const {area} = e.target.dataset;
       // update the relevant state to true
       setValues({ [area]: true} );
+
+      let elemToScroll = document.getElementById(area).offsetTop;
+      console.log(area);
+      console.log(elemToScroll);
+      window.scrollTo({
+        top: elemToScroll-100, 
+        behavior: 'smooth'
+      })
   }
 
   // Set active states when scrolled over
@@ -63,6 +73,10 @@ export default function Home() {
       window.removeEventListener('scroll', () => handleScrollActive);
     }
   }, []);
+
+
+  
+  const figmaURL = "";
 
     
   const nextSteps = [
@@ -101,16 +115,6 @@ export default function Home() {
     },
   ];
 
-
-
-  // let padRef = useRef({});
-
-  // function handleClearSignature() {
-  //     padRef.current.clear();
-  // }
-
-  // const [signature, setSignature] = useState(false);
-
   return (
 
     <Layout>
@@ -144,7 +148,7 @@ export default function Home() {
                 <div className="md:flex md:justify-between md:items-center p-6 mx-auto font-light text-white bg-secondary-dark lg:p-10 xl:p-16 mt-[-30px]">
                   <p className="xl:text-lg xl:w-2/3 2xl:w-1/2">
                     <span className="block text-secondary-light lg:inline">Need another look? </span> 
-                    Click the link to review your design again before signing it off to code.
+                    Your design is still available to view at the link provided, or by clicking 'view design'.
                   </p>
                   <div className="md:justify-center md:flex md:w-3/12 lg:w-auto">
                     <Button
@@ -163,7 +167,7 @@ export default function Home() {
                 <ul className="w-full sm:flex sm:justify-between xl:w-2/3 xl:mx-auto">
                   <li className="3xl:w-1/4">
                     <a
-                        href="#moreInfo"
+                        href="#"
                         onClick={handleActiveChange}
                         data-area="moreInfo"
                         className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.moreInfo ? 'text-primary border-primary' : 'border-transparent'}`}>
@@ -173,7 +177,7 @@ export default function Home() {
 
                   <li className="3xl:w-1/4">
                     <a
-                        href="#what-can-i-change"
+                        href="#"
                         onClick={handleActiveChange}
                         data-area="whatCanIChange"
                         className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.whatCanIChange ? 'text-primary border-primary' : 'border-transparent'}`}>
@@ -183,7 +187,7 @@ export default function Home() {
 
                   <li className="3xl:w-1/4">
                     <a
-                        href="#signoff-form"
+                        href="#"
                         onClick={handleActiveChange}
                         data-area="signOffForm"
                         className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.signOffForm ? 'text-primary border-primary' : 'border-transparent'}`}>
@@ -193,7 +197,7 @@ export default function Home() {
 
                   <li className="3xl:w-1/4">
                     <a
-                        href="#what-happens-next"
+                        href="#"
                         onClick={handleActiveChange}
                         data-area="whatHappensNext"
                         className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.whatHappensNext ? 'text-primary border-primary' : 'border-transparent'}`}>
@@ -314,33 +318,6 @@ export default function Home() {
                     <span className="ml-2 opacity-75">I am happy with the design of my new website, please proceed to the development / code phase.</span>
                   </label>
 
-                  {/* <label className="w-full p-3 sig-pad">
-                    
-                    <span className="">Your signature *</span>
-                    
-                    <SignatureCanvas
-                      penColor='black'
-                      ref={padRef}
-                      clearOnResize={true}
-                      canvasProps={{
-                        width: 310, 
-                        height: 150, 
-                        className: 'sigCanvas bg-white border border-gray-300'
-                      }}
-                    />
-                    
-                    <button arial-label="Clear signature pad" className="px-2 py-1 mt-3 opacity-50 text-2xs" onClick={() => {handleClearSignature()}}>Clear signature</button>
-                    
-                    <button arial-label="Finished signature" className="px-2 py-1 mt-3 text-2xs" onClick={() => {
-                      let signature = document.querySelector('.sigCanvas').toDataURL('image/png');
-                      document.querySelector('.sig-pad').classList.add('opacity-50', 'pointer-events-none');
-                      setSignature(signature);
-                    }}>Finish signature</button>
-                    
-                  </label> */}
-                  
-                  {/* <input required type="hidden" className="signature-image" value={signature} name="signature" /> */}
-                  
                   <input type="text" name="_gotcha" className="hidden" />
                   
                   <div className="w-full p-3">
