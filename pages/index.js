@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Layout from '../components/layout'
 import Container from '../components/container'
@@ -10,6 +11,9 @@ import Roundworks from '../components/roundworks'
 import { motion } from 'framer-motion'
 
 export default function Home() {
+
+  // Router to get Figma URL
+  const router = useRouter();
 
   //Set the navigation to sticky when you scroll past it
   const [isSticky, setSticky] = useState(false);  
@@ -71,12 +75,7 @@ export default function Home() {
       window.removeEventListener('scroll', () => handleScrollActive);
     }
   }, []);
-
-
-  
-  const figmaURL = "";
-
-    
+      
   const nextSteps = [
     'Send website imagery and branding to your designer',
     'Provide assets that we need, certificates, testimonials etc.',
@@ -149,10 +148,15 @@ export default function Home() {
                     Your design is still available to view at the link provided, or by clicking 'view design'.
                   </p>
                   <div className="md:justify-center md:flex md:w-3/12 lg:w-auto">
+                    {router.query.figma ? 
                     <Button
                       buttonLabel="View design"
-                      destination="/"
+                      destination={router.query.figma}
                     />
+                    :
+                    <>
+                    </>
+                    }
                   </div>                
                 </div>
               </div>
