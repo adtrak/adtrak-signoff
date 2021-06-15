@@ -302,7 +302,7 @@ export default function Home() {
                   </label>
                   <label className="w-full p-3 md:w-1/2">
                     <span className="">Web Address *</span>
-                    <input required type="url" className="w-full" name="Web Address" placeholder="Web Address *" />
+                    <input required type="text" className="w-full" name="Web Address" placeholder="Web Address *" />
                   </label>
                   <label className="w-full p-3 md:w-1/2">
                     <span className="">Your Adtrak account manager *</span>
