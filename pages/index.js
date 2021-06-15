@@ -220,7 +220,7 @@ export default function Home() {
 
                 <p>Any structural, functionality or development changes after signing this document may be subject to a charge of £100 per hour. Minor copy or imagery changes are not affected by this.</p>
 
-                <p>We want to produce the best website possible for you that meets your end requirements. In order to do this effectively, Adtrak will design all unique pages and create copy in order for you to make any changes that you feel are necessary.</p>
+                <p>We want to produce the best website possible for you that meets your end requirements. In order to do this effectively, Adtrak will design a range of pages and features and create copy in order for you to make any changes that you feel are necessary.</p>
 
                 <p>Changes before the development stage are easier to implement, and as such, all parties involved need to be happy with the design before development begins.</p>
               </div>
@@ -324,7 +324,7 @@ export default function Home() {
                   <input type="text" name="_gotcha" className="hidden" />
                   
                   <div className="w-full p-3">
-                    <input type="submit" className="p-3 text-white transition duration-300 cursor-pointer bg-primary focus:text-white" value="Send Enquiry" />
+                    <input type="submit" className="p-3 text-white transition duration-300 cursor-pointer bg-primary focus:text-white" value="Approve My Design" />
                   </div>
 
                 </form>
