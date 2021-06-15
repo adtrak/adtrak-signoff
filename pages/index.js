@@ -43,8 +43,6 @@ export default function Home() {
       setValues({ [area]: true} );
 
       let elemToScroll = document.getElementById(area).offsetTop;
-      console.log(area);
-      console.log(elemToScroll);
       window.scrollTo({
         top: elemToScroll-100, 
         behavior: 'smooth'
