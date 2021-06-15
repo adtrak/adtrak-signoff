@@ -194,7 +194,7 @@ export default function Home() {
                         onClick={handleActiveChange}
                         data-area="signOffForm"
                         className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.signOffForm ? 'text-primary border-primary' : 'border-transparent'}`}>
-                        Signoff Form
+                        Sign Off Form
                     </a>
                   </li>
 
@@ -301,11 +301,11 @@ export default function Home() {
                     <input required type="text" className="w-full" name="Website Name" placeholder="Website Name *" />
                   </label>
                   <label className="w-full p-3 md:w-1/2">
-                    <span className="">Web Address *</span>
+                    <span className="">Current Web Address *</span>
                     <input required type="text" className="w-full" name="Web Address" placeholder="Web Address *" />
                   </label>
                   <label className="w-full p-3 md:w-1/2">
-                    <span className="">Your Adtrak account manager *</span>
+                    <span className="">Your Adtrak Account Manager *</span>
                     <select className="w-full" name="Account Manager">
                       <option value="Aaron Robb" defaultValue>Aaron Robb</option>
                       <option value="Ben Shaw">Ben Shaw</option>
