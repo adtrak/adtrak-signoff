@@ -1,12 +1,8 @@
-import { useEffect, useState } from 'react'
 import SeoHead from '../components/seoHead'
-import Image from 'next/image'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import Header from '../components/header'
 import Roundworks from '../components/roundworks'
-import Button from '../components/button'
-import ChangeFeature from '../components/changeFeature'
 import NextStep from '../components/nextStep'
 import { motion } from 'framer-motion'
 

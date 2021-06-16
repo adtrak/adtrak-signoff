@@ -1,7 +1,6 @@
 import SeoHead from '../components/seoHead'
 import Layout from '../components/layout'
 import Header from '../components/header'
-import { motion } from 'framer-motion'
 
 export default function ErrorPage() {
 

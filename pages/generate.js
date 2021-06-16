@@ -4,10 +4,6 @@ import SeoHead from '../components/seoHead'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import Header from '../components/header'
-import Button from '../components/button'
-import ChangeFeature from '../components/changeFeature'
-import NextStep from '../components/nextStep'
-import Roundworks from '../components/roundworks'
 import { motion } from 'framer-motion'
 
 export default function Home() {
