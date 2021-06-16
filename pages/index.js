@@ -15,6 +15,8 @@ export default function Home() {
 
   // Router to get Figma URL
   const router = useRouter();
+  const asPath = router.asPath;
+  const figmaUrl = asPath.replace('/?figma=', '');  
 
   //Set the navigation to sticky when you scroll past it
   const [isSticky, setSticky] = useState(false);  
@@ -144,10 +146,10 @@ export default function Home() {
                     Your design is still available to view at the link provided, or by clicking 'view design'.
                   </p>
                   <div className="md:justify-center md:flex md:w-3/12 lg:w-auto">
-                    {router.query.figma ? 
+                    {figmaUrl ? 
                     <Button
                       buttonLabel="View design"
-                      destination={router.query.figma}
+                      destination={figmaUrl}
                     />
                     :
                     <>
@@ -168,7 +170,7 @@ export default function Home() {
                         href="#"
                         onClick={handleActiveChange}
                         data-area="moreInfo"
-                        className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.moreInfo ? 'text-primary border-primary' : 'border-transparent'}`}>
+                        className={`block p-4 pl-0 border-b-2 md:py-8 3xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.moreInfo ? 'text-primary border-primary' : 'border-transparent'}`}>
                         More Information
                     </a>
                   </li>
@@ -178,7 +180,7 @@ export default function Home() {
                         href="#"
                         onClick={handleActiveChange}
                         data-area="whatCanIChange"
-                        className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.whatCanIChange ? 'text-primary border-primary' : 'border-transparent'}`}>
+                        className={`block p-4 pl-0 border-b-2 md:py-8 3xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.whatCanIChange ? 'text-primary border-primary' : 'border-transparent'}`}>
                         What Can I Change?
                     </a>
                   </li>
@@ -188,7 +190,7 @@ export default function Home() {
                         href="#"
                         onClick={handleActiveChange}
                         data-area="signOffForm"
-                        className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.signOffForm ? 'text-primary border-primary' : 'border-transparent'}`}>
+                        className={`block p-4 pl-0 border-b-2 md:py-8 3xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.signOffForm ? 'text-primary border-primary' : 'border-transparent'}`}>
                         Sign Off Form
                     </a>
                   </li>
@@ -198,7 +200,7 @@ export default function Home() {
                         href="#"
                         onClick={handleActiveChange}
                         data-area="whatHappensNext"
-                        className={`block p-4 pl-0 border-b-2 md:py-8 xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.whatHappensNext ? 'text-primary border-primary' : 'border-transparent'}`}>
+                        className={`block p-4 pl-0 border-b-2 md:py-8 3xl:p-10 sm:py-4 sm:inline-block scroll-to transition ${values.whatHappensNext ? 'text-primary border-primary' : 'border-transparent'}`}>
                         What Happens Next
                     </a>
                   </li>
