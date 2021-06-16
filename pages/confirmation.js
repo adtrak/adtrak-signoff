@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Head from 'next/head'
+import SeoHead from '../components/seoHead'
 import Image from 'next/image'
 import Layout from '../components/layout'
 import Container from '../components/container'
@@ -25,16 +25,10 @@ export default function Home() {
 
     <Layout>
 
-        <Head>
-            <link rel="icon" href="/favicon.ico" />
-            <title>Confirmed | Adtrak Sign Off</title>
-            <meta
-            name="description"
-            content="Adtrak Sign off Form"
-            />
-            <meta name="og:title" content="Adtrak Sign off Form" />
-            <meta name="twitter:card" content="summary_large_image" />
-        </Head>
+        <SeoHead 
+          title="Signed Off | Adtrak Media Limited"
+          description="Confirmed! Your design has been signed off and we'll now build your website!"
+        /> 
 
         <motion.div 
           key="homepage"

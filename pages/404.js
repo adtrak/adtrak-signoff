@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import SeoHead from '../components/seoHead'
 import Layout from '../components/layout'
 import Header from '../components/header'
 import { motion } from 'framer-motion'
@@ -9,16 +9,10 @@ export default function ErrorPage() {
 
     <Layout>
 
-      <Head>
-          <link rel="icon" href="/favicon.ico" />
-          <title>Nextjs boilerplate</title>
-          <meta
-          name="description"
-          content="nextJS boilerplate"
-          />
-          <meta name="og:title" content="Website Title" />
-          <meta name="twitter:card" content="summary_large_image" />
-      </Head>
+      <SeoHead 
+          title="Not Found | Adtrak Media Limited"
+          description="Sign off your design and we'll proceed to build your brand new website"
+        /> 
 
       <Header />
 

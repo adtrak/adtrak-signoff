@@ -1,20 +1,24 @@
 import Container from './container'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Header({ heading, subheading }) {
     return (
         <header className="bg-secondary pb-[40px] xl:pb-[60px]">
             <Container>
                 <div className="flex items-center justify-between p-6 md:py-8 md:px-20">
-                    
-                    <Image
-                    src="/images/adtrak-logo.svg"
-                    alt="Adtrak Logo"
-                    width={160}
-                    height={35}
-                    />
+                    <Link href="/">
+                        <a className="transition hover:opacity-90">
+                            <Image
+                            src="/images/adtrak-logo.svg"
+                            alt="Adtrak Logo"
+                            width={160}
+                            height={35}
+                            />
+                        </a>
+                    </Link>
 
-                    <a href="tel:" className="p-4 font-bold bg-secondary-light text-primary-dark">0115 959 8900</a>
+                    <a href="tel:" className="p-4 font-bold transition bg-secondary-light text-primary-dark hover:no-underline hover:filter hover:brightness-105">0115 959 8900</a>
 
                 </div>
 

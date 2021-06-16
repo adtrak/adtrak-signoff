@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import Head from 'next/head'
+// import Head from 'next/head'
+import SeoHead from '../components/seoHead'
 import Layout from '../components/layout'
 import Container from '../components/container'
 import Header from '../components/header'
@@ -117,16 +118,10 @@ export default function Home() {
 
     <Layout>
 
-        <Head>
-            <link rel="icon" href="/favicon.ico" />
-            <title>Adtrak Sign Off Form</title>
-            <meta
-            name="description"
-            content="Adtrak Sign off Form"
-            />
-            <meta name="og:title" content="Adtrak Sign off Form" />
-            <meta name="twitter:card" content="summary_large_image" />
-        </Head>        
+        <SeoHead 
+          title="Design Sign Off | Adtrak Media Limited"
+          description="Sign off your design and we'll proceed to build your brand new website"
+        />      
 
         <motion.div 
           key="homepage"
