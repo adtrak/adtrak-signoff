@@ -16,7 +16,9 @@ export default function Home() {
   // Router to get Figma URL
   const router = useRouter();
   const asPath = router.asPath;
-  const figmaUrl = asPath.replace('/?figma=', '');  
+  if(router.query.figma) {
+    const figmaUrl = asPath.replace('/?figma=', '');  
+  }
 
   //Set the navigation to sticky when you scroll past it
   const [isSticky, setSticky] = useState(false);  
@@ -146,10 +148,10 @@ export default function Home() {
                     Your design is still available to view at the link provided, or by clicking 'view design'.
                   </p>
                   <div className="md:justify-center md:flex md:w-3/12 lg:w-auto">
-                    {figmaUrl ? 
+                    {router.query.figma ? 
                     <Button
                       buttonLabel="View design"
-                      destination={figmaUrl}
+                      destination={router.query.figma}
                     />
                     :
                     <>
