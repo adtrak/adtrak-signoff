@@ -309,7 +309,7 @@ export default function Home() {
                       <option value="Ben Shaw">Ben Shaw</option>
                       <option value="Chris Robinson">Chris Robinson</option>
                       <option value="Ian Cromie">Ian Cromie</option>
-                      <option value="Luke COrner">Luke Corner</option>
+                      <option value="Luke Corner">Luke Corner</option>
                       <option value="Paul O'Donoghue">Paul O'Donoghue</option>
                       <option value="Xavier Hodgetts">Xavier Hodgetts</option>
                       <option value="Unsure">Unsure / Not Listed Here</option>
