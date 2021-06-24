@@ -226,7 +226,7 @@ export default function Home() {
               <div className="p-6 md:p-20 lg:w-8/12 xl:w-7/12 2xl:w-1/2 lg:px-0 md:mx-auto content">
                 <p>By agreeing to the terms of this document and signing as below, I am happy with the design of my new website and will not look to make any further changes during the development stage, or before it goes live.</p>
 
-                <p>Any structural, functionality or development changes after signing this document may be subject to a charge of £100 per hour. Minor copy or imagery changes are not affected by this.</p>
+                <p>Any structural, functionality or development changes after signing this document may be subject to a charge. Minor copy or imagery changes are not affected by this.</p>
 
                 <p>We want to produce the best website possible for you that meets your end requirements. In order to do this effectively, Adtrak will design a range of pages and features and create copy in order for you to make any changes that you feel are necessary.</p>
 
