@@ -16,7 +16,6 @@ export default function Home() {
   const generateLink = (e) => {
     let figmaUrl = document.getElementById('figmaUrl').value;
     let signOffUrl = "https://adtrak-signoff.vercel.app/?figma="+figmaUrl;
-    console.log(signOffUrl);
     document.getElementById('sign-off-url').value = signOffUrl;
     document.getElementById('sign-off-url').focus();
     document.getElementById('sign-off-url').select();

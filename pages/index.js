@@ -14,10 +14,20 @@ export default function Home() {
 
   // Router to get Figma URL
   const router = useRouter();
-  const asPath = router.asPath;
-  if(router.query.figma) {
-    const figmaUrl = asPath.replace('/?figma=', '');  
-  }
+    
+    let figmaUrl = "";
+    if(process.browser) {
+      const urlSearchParams = new URLSearchParams(window.location.search);
+      urlSearchParams.forEach(function(value, key) {
+        console.log(key, value);
+        if(key === "figma") {
+          figmaUrl += value;
+        }
+        else {
+          figmaUrl+= "&"+key+"="+value;
+        }
+      });
+    }
 
   //Set the navigation to sticky when you scroll past it
   const [isSticky, setSticky] = useState(false);  
@@ -150,7 +160,7 @@ export default function Home() {
                     {router.query.figma ? 
                     <Button
                       buttonLabel="View design"
-                      destination={router.query.figma}
+                      destination={figmaUrl}
                     />
                     :
                     <>
