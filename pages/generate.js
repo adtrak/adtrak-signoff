@@ -110,9 +110,9 @@ export default function Home() {
 
                   <p>Please find the links to the concepts below so you can look through them at your own leisure.</p>
 
-                  <p><a className="underline mobile-figma-link text-primary" href="">Mobile Demo</a></p>
+                  <p><a className="underline mobile-figma-link text-primary" href="">Mobile Concept</a></p>
 
-                  <p><a className="underline desktop-figma-link text-primary" href="">Desktop Demo</a></p>
+                  <p><a className="underline desktop-figma-link text-primary" href="">Desktop Concept</a></p>
 
                   <p>In order to progress your project to the next stage, we require you to sign off the design. By signing off your design, you're telling us that you're happy with the layout, colour scheme and overall design of the website.</p>
 
