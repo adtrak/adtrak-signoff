@@ -33,7 +33,7 @@ export default function Home() {
     let signOffUrl = "https://adtrak-signoff.vercel.app/?figma="+desktopFigmaUrl;
     document.getElementById('sign-off-url').value = signOffUrl;
 
-    setCopySuccess('Copied! Paste this into an email to send to the client.');
+    setCopySuccess('Email has been generated. Scroll down to see your email template.');
 
     document.querySelector('.signoff-link').href = signOffUrl;
     var range = document.createRange();
