@@ -30,7 +30,7 @@ export default function Home() {
     document.querySelector('.desktop-figma-link').href = desktopFigmaUrl;
 
     // Generate and set the signoff URL
-    let signOffUrl = "https://adtrak-signoff.vercel.app/?figma="+desktopFigmaUrl;
+    let signOffUrl = "https://signoff.adtrak.co.uk/?figma="+desktopFigmaUrl;
     document.getElementById('sign-off-url').value = signOffUrl;
 
     setCopySuccess('Email has been generated. Scroll down to see your email template.');
