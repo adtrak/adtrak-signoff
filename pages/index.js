@@ -314,8 +314,8 @@ export default function Home() {
                   </label>
                   <label className="w-full p-3 md:w-1/2">
                     <span className="">Your Adtrak Account Manager *</span>
-                    <select className="w-full" name="Account Manager" defaultValue={'DEFAULT'}>
-                      <option value="DEFAULT" disabled>- Please select -</option>
+                    <select className="w-full" name="Account Manager" defaultValue={''}>
+                      <option value="" disabled>- Please select -</option>
                       <option value="Aaron Robb">Aaron Robb</option>
                       <option value="Ben Shaw">Ben Shaw</option>
                       <option value="Chris Robinson">Chris Robinson</option>
